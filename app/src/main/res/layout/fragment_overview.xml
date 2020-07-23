@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.teodyulgerov.breakingbadcharacters.R" />
+
+        <variable
+            name="viewModel"
+            type="com.teodyulgerov.breakingbadcharacters.ui.fragment.overview.OverviewVM" />
+
+    </data>
+
+    <com.teodyulgerov.breakingbadcharacters.view.loading.LoadingView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGray"
+        android:paddingTop="@dimen/margin_between_elements_default"
+        android:paddingBottom="@dimen/margin_between_elements_default"
+        app:loadingViewProgressBarVisibility="@{safeUnbox(viewModel.loadingViewProgressBarVisibility)}"
+        app:loadingViewText="@{viewModel.loadingViewText}"
+        app:loadingViewTextVisibility="@{safeUnbox(viewModel.loadingViewTextVisibility)}">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewOverview"
+            android:layout_width="@dimen/no_dimens"
+            android:layout_height="@dimen/no_dimens"
+            app:itemLayoutResId="@{R.layout.item_character}"
+            app:items="@{viewModel.characters}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:viewModel="@{viewModel}"
+            app:visibility="@{!safeUnbox(viewModel.loadingViewProgressBarVisibility) &amp;&amp; !safeUnbox(viewModel.loadingViewTextVisibility)}" />
+
+    </com.teodyulgerov.breakingbadcharacters.view.loading.LoadingView>
+
+</layout>

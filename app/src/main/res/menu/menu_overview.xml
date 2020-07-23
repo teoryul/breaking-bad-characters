@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_item_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/menu_item_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <item
+        android:icon="@drawable/ic_filter"
+        android:title="@string/menu_item_filter_seasons"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/menu_item_filter_all"
+                android:title="@string/menu_item_filter_seasons_all" />
+
+            <item
+                android:id="@+id/menu_item_filter_s1"
+                android:title="@string/menu_item_filter_season_1" />
+
+            <item
+                android:id="@+id/menu_item_filter_s2"
+                android:title="@string/menu_item_filter_season_2" />
+
+            <item
+                android:id="@+id/menu_item_filter_s3"
+                android:title="@string/menu_item_filter_season_3" />
+
+            <item
+                android:id="@+id/menu_item_filter_s4"
+                android:title="@string/menu_item_filter_season_4" />
+
+            <item
+                android:id="@+id/menu_item_filter_s5"
+                android:title="@string/menu_item_filter_season_5" />
+
+        </menu>
+
+    </item>
+
+</menu>

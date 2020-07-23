@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_between_elements_default">8dp</dimen>
+    <dimen name="margin_between_elements_half">4dp</dimen>
+    <dimen name="no_dimens">0dp</dimen>
+
+    <!-- Material Design Typography Default sizes -->
+    <dimen name="material_design_headline_txt_size">24sp</dimen>
+    <dimen name="material_design_app_bar_txt_size">20sp</dimen>
+    <dimen name="material_design_title_txt_size">20sp</dimen>
+    <dimen name="material_design_heading_txt_size">14sp</dimen>
+    <dimen name="material_design_subheading_txt_size">16sp</dimen>
+    <dimen name="material_design_btn_txt_size">14sp</dimen>
+    <dimen name="material_design_caption_txt_size">12sp</dimen>
+    <dimen name="material_design_body_txt_size">14sp</dimen>
+
+    <!-- Overview screen sizes -->
+    <dimen name="item_character_img_width">100dp</dimen>
+    <dimen name="item_character_img_height">100dp</dimen>
+
+    <!-- Detail screen sizes  -->
+    <dimen name="detail_img_height">200dp</dimen>
+
+</resources>

@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">Breaking Bad</string>
+
+    <string name="empty" translatable="false" />
+
+    <!-- Overview screen -->
+    <string name="overview_search_no_results">There are no search results.</string>
+
+    <!-- Detail screen -->
+    <string name="detail_screen_aka">also know as</string>
+    <string name="detail_screen_occupation">Occupation</string>
+    <string name="detail_screen_status">Current status</string>
+    <string name="detail_screen_appearance">Season appearance</string>
+
+    <!-- Menu items -->
+    <string name="menu_item_search">Search</string>
+    <string name="menu_item_search_hint">Search by Name</string>
+    <string name="menu_item_filter_seasons">Filter Seasons</string>
+    <string name="menu_item_filter_seasons_all">All Seasons</string>
+    <string name="menu_item_filter_season_1">Season 1</string>
+    <string name="menu_item_filter_season_2">Season 2</string>
+    <string name="menu_item_filter_season_3">Season 3</string>
+    <string name="menu_item_filter_season_4">Season 4</string>
+    <string name="menu_item_filter_season_5">Season 5</string>
+
+    <!-- Error messages -->
+    <string name="internet_connection_unavailable">Internet connection is unavailable.</string>
+    <string name="api_error">Something went wrong while loading the characters.</string>
+    <string name="unable_to_load_character_info">Something went wrong while loading the character information.</string>
+
+</resources>

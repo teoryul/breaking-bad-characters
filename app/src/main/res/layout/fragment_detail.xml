@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.teodyulgerov.breakingbadcharacters.R" />
+
+        <variable
+            name="viewModel"
+            type="com.teodyulgerov.breakingbadcharacters.ui.fragment.detail.DetailVM" />
+
+        <variable
+            name="item"
+            type="com.teodyulgerov.breakingbadcharacters.repository.model.CharacterModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGray">
+
+        <com.teodyulgerov.breakingbadcharacters.view.loading.LoadingView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            app:loadingViewProgressBarVisibility="@{safeUnbox(viewModel.loadingViewProgressBarVisibility)}"
+            app:loadingViewText="@{viewModel.loadingViewText}"
+            app:loadingViewTextVisibility="@{safeUnbox(viewModel.loadingViewTextVisibility)}">
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="@dimen/no_dimens"
+                app:constraint_referenced_ids="imgCharacter,txtName,txtAka,txtNickname,
+                txtHeadlineOccupation,txtOccupation,txtHeadlineStatus,txtStatus,
+                txtHeadlineAppearance,txtAppearance"
+                app:visibility="@{!safeUnbox(viewModel.loadingViewProgressBarVisibility) &amp;&amp; !safeUnbox(viewModel.loadingViewTextVisibility)}" />
+
+            <ImageView
+                android:id="@+id/imgCharacter"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="@dimen/detail_img_height"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:src="@{viewModel.character.img}" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center"
+                android:text="@{viewModel.character.name}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_title_txt_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgCharacter"
+                tools:text="Walter White" />
+
+            <TextView
+                android:id="@+id/txtAka"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/detail_screen_aka"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_caption_txt_size"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/txtName"
+                app:layout_constraintStart_toStartOf="@id/txtName"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+            <TextView
+                android:id="@+id/txtNickname"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{viewModel.character.nickname}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_subheading_txt_size"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@id/txtName"
+                app:layout_constraintStart_toStartOf="@id/txtName"
+                app:layout_constraintTop_toBottomOf="@id/txtAka"
+                tools:text="Heisenberg" />
+
+            <TextView
+                android:id="@+id/txtHeadlineOccupation"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center"
+                android:text="@string/detail_screen_occupation"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_subheading_txt_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNickname" />
+
+            <TextView
+                android:id="@+id/txtOccupation"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements_default"
+                android:gravity="center"
+                android:text="@{viewModel.character.occupation}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_body_txt_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHeadlineOccupation"
+                tools:text="@string/detail_screen_occupation" />
+
+            <TextView
+                android:id="@+id/txtHeadlineStatus"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center"
+                android:text="@string/detail_screen_status"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_subheading_txt_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtOccupation" />
+
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements_default"
+                android:gravity="center"
+                android:text="@{viewModel.character.status}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_body_txt_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHeadlineStatus"
+                tools:text="@string/detail_screen_status" />
+
+            <TextView
+                android:id="@+id/txtHeadlineAppearance"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:gravity="center"
+                android:text="@string/detail_screen_appearance"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_subheading_txt_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStatus" />
+
+            <TextView
+                android:id="@+id/txtAppearance"
+                android:layout_width="@dimen/no_dimens"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements_default"
+                android:gravity="center"
+                android:text="@{viewModel.character.appearance}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/material_design_body_txt_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtHeadlineAppearance"
+                tools:text="@string/detail_screen_appearance" />
+
+        </com.teodyulgerov.breakingbadcharacters.view.loading.LoadingView>
+
+    </ScrollView>
+
+</layout>
